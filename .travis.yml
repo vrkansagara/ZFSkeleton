@@ -2,10 +2,6 @@ sudo: false
 
 language: php
 
-cache:
-  directories:
-    - vendor
-
 matrix:
   fast_finish: true
 
@@ -28,13 +24,11 @@ before_install:
   # add composer's global bin directory to the path
   # see: https://github.com/drush-ops/drush#install---composer
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer self-update
-  - composer selfupdate
 
 install:
   - composer update
   - composer info -i
 
-script:
+#script:
 # - (cd test ; ../vendor/bin/phpunit -c phpunit.xml)
- - ./vendor/bin/php-cs-fixer -v fix . --dry-run --config-file ./.php_cs
+# - ./vendor/bin/php-cs-fixer -v fix . --dry-run --config-file ./.php_cs
