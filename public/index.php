@@ -1,11 +1,8 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 /**
  * Display all errors when APPLICATION_ENV is development.
  */
-if ($_SERVER['APPLICATION_ENV'] == 'development') {
+if (getenv('APPLICATION_ENV') == 'development') {
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 }
