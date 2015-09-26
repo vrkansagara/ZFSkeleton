@@ -1,0 +1,22 @@
+{
+  "name": "vrkansagara/zfskeleton",
+  "description": "Skeleton Application for ZF2",
+  "minimum-stability": "stable",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "framework",
+    "zf2",
+    "php"
+  ],
+  "homepage": "http://vrkansagara.in/",
+  "authors": [
+    {
+      "name": "Vallabh Kansagara",
+      "email": "vrkansagara@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "zendframework/zendframework": "^2.5"
+  }
+}
