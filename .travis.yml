@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 
 language: php
 
@@ -25,7 +25,6 @@ matrix:
 
 
 before_install:
-  - sudo apt-get update > /dev/null
   - composer self-update
 
 install:
