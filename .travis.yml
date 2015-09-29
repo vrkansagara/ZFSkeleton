@@ -26,6 +26,7 @@ before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 install:
+  - composer self-update
   - composer update
   - composer info -i
 

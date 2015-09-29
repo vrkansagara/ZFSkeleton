@@ -2,6 +2,7 @@
 $finder = Symfony\CS\Finder\DefaultFinder::create()
     ->in('module')
     ->in('public')
+    ->in('test')
     ->filter(function (SplFileInfo $file) {
         if (strstr($file->getPath(), 'compatibility')) {
             return false;
