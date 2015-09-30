@@ -40,8 +40,8 @@ before_install:
 
 install:
  - travis_retry composer install --no-interaction --ignore-platform-reqs
-  - composer self-update
-  - composer update
+ - composer self-update
+ - composer update
 
 
 script:
