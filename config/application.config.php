@@ -2,14 +2,14 @@
 /**
  * If you need an environment-specific system or application configuration,
  * there is an example in the documentation
+ *
  * @see http://framework.zend.com/manual/current/en/tutorials/config.advanced.html#environment-specific-system-configuration
  * @see http://framework.zend.com/manual/current/en/tutorials/config.advanced.html#environment-specific-application-configuration
  */
 return [
     // This should be an array of module namespaces used in the application.
-    'modules' => [
+    'modules'                 => [
         'Application',
-        'Album'
     ],
 
     // These are various options for the listeners attached to the ModuleManager
@@ -18,7 +18,7 @@ return [
         // If a string key is provided, the listener will consider that a module
         // namespace, the value of that key the specific path to that module's
         // Module class.
-        'module_paths' => [
+        'module_paths'      => [
             './module',
             './vendor',
         ],
@@ -65,7 +65,7 @@ return [
     //     ),
     // ),
 
-   // Initial configuration with which to seed the ServiceManager.
-   // Should be compatible with Zend\ServiceManager\Config.
-   // 'service_manager' => array(),
+    // Initial configuration with which to seed the ServiceManager.
+    // Should be compatible with Zend\ServiceManager\Config.
+    // 'service_manager' => array(),
 ];
