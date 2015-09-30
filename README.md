@@ -24,7 +24,7 @@ The easiest way to create a new ZF2 project is to use [Composer](https://getcomp
 
 Create your new ZF2 project:
 ```console
-    $ composer create-project -n -smaster vrkansagara/ZFSkeleton path/to/install
+    $ composer create-project -n -sstable vrkansagara/ZFSkeleton path/to/install
 ```
 OR you can use 
 ```console
