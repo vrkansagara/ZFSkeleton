@@ -77,7 +77,7 @@ Look in [Vagrantfile](Vagrantfile) for configuration details.
 
 To setup apache, setup a virtual host to point to the public/ directory of the
 project and you should be ready to go! It should look something like below:
-
+```console
     <VirtualHost *:80>
         ServerName ZFSkeleton.localhost
         DocumentRoot /path/to/ZFSkeleton/public
@@ -91,7 +91,7 @@ project and you should be ready to go! It should look something like below:
             </IfModule>
         </Directory>
     </VirtualHost>
-
+```
 ### Nginx setup
 
 To setup nginx, open your `/path/to/nginx/nginx.conf` and add an
