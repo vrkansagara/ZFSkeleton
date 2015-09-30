@@ -47,5 +47,4 @@ script:
 #  - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover clover.xml ; fi
 #  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit ; fi
 #  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/fabpot/php-cs-fixer/php-cs-fixer  -v fix . --dry-run --config-file ./.php_cs ; fi
-  - ./vendor/fabpot/php-cs-fixer/php-cs-fixer  -v fix . --dry-run --config-file ./.php_cs
   - ./vendor/bin/phpunit -c test/phpunit.xml
