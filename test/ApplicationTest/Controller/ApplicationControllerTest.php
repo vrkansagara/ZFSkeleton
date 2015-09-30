@@ -16,7 +16,7 @@ class ApplicationControllerTest extends AbstractHttpControllerTestCase
     public function setUp()
     {
         $this->setApplicationConfig(
-            include '/home/vallabh/git/ZFSkeleton/config/application.config.php'
+            include getcwd() . '/config/application.config.php'
         );
         parent::setUp();
     }
