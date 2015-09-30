@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="Bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="zf2tutorial">
+            <directory>./AlbumTest</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <!--<log type="coverage-html" target="./log/report" charset="UTF-8"
+             yui="true" highlight="true"
+             lowUpperBound="50" highLowerBound="80"/>-->
+
+        <log type="testdox-text" target="./log/testdox.txt"/>
+        <log type="testdox-html" target="./log/testdox.html"/>
+    </logging>
+</phpunit>
