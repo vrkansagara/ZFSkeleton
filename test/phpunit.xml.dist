@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../vendor/phpunit/phpunit/phpunit.xsd"
+        bootstrap="./bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Zend Framework Skeleton Test Suite">
+            <directory>./</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <blacklist>
+            <directory suffix=".vr">./</directory>
+        </blacklist>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <!--<log type="coverage-html" target="./log/report" charset="UTF-8"
+             yui="true" highlight="true"
+             lowUpperBound="50" highLowerBound="80"/>-->
+
+        <log type="testdox-text" target="./log/testdox.txt"/>
+        <log type="testdox-html" target="./log/testdox.html"/>
+    </logging>
+    <!--<php>
+        <ini name="date.timezone" value="UTC"/>
+
+        &lt;!&ndash; OB_ENABLED should be enabled for some tests to check if all
+             functionality works as expected. Such tests include those for
+             Zend\Soap and Zend\Session, which require that headers not be sent
+             in order to work. &ndash;&gt;
+        <env name="TESTS_ZEND_OB_ENABLED" value="false"/>
+
+    </php>-->
+</phpunit>
