@@ -12,24 +12,40 @@ matrix:
     - php: 5.6
       env:
         - EXECUTE_CS_CHECK=true
+
     - php: 7
+
     - php: hhvm
 
   allow_failures:
     - php: 7
     - php: hhvm
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+#notifications:
+#  irc: "irc.freenode.org#zftalk.dev"
+#  email: false
 
 before_install:
   # add composer's global bin directory to the path
   # see: https://github.com/drush-ops/drush#install---composer
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
+    - composer self-update
+    - composer info -i
+  - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then composer require --dev --no-update satooshi/php-coveralls ; fi
 
 install:
+ - travis_retry composer install --no-interaction --ignore-platform-reqs
   - composer self-update
   - composer update
-  - composer info -i
 
-#script:
-# - (cd test ; ../vendor/bin/phpunit -c phpunit.xml)
-# - ./vendor/bin/php-cs-fixer -v fix . --dry-run --config-file ./.php_cs
+
+script:
+  - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover clover.xml ; fi
+  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then -v fix . --dry-run --config-file ./.php_cs ; fi
+  - cd test ; ../vendor/bin/phpunit -c phpunit.xml
