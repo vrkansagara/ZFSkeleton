@@ -2,47 +2,56 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <?php echo $this->headMeta()
-        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+    <?php
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
     ?>
-    <?php echo $this->headTitle(
-        'ZF2 ' . $this->translate('Skeleton Application')
-    )->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php
+        echo $this->headTitle(
+            'ZF2 ' . $this->translate('Skeleton Application')
+        )->setSeparator(' - ')->setAutoEscape(false)
+    ?>
 
     <!-- Le styles -->
-    <?php echo $this->headLink(
-        array('rel'  => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon',
-              'href' => $this->basePath() . 'assets/img/favicon.ico')
-    )
-        ->prependStylesheet($this->basePath('assets/css/app.css'))
-        ->prependStylesheet($this->basePath('assets/css/foundation.css')) ?>
+    <?php
+        echo $this->headLink(
+            array('rel' => 'shortcut icon',
+                  'type' => 'image/vnd.microsoft.icon',
+                  'href' => $this->basePath() . 'assets/img/favicon.ico')
+        )
+            ->prependStylesheet($this->basePath('assets/css/app.css'))
+            ->prependStylesheet($this->basePath('assets/css/foundation.css'))
+    ?>
 
     <!-- Scripts -->
-    <?php echo $this->headScript()
-        ->prependFile($this->basePath('assets/js/vendor/modernizr.js')) ?>
+    <?php
+        echo $this->headScript()
+            ->prependFile($this->basePath('assets/js/vendor/modernizr.js'))
+    ?>
 </head>
 <body>
 <div class="row">
     <div class="large-9 columns">
-        <h3><a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img
-                    src="<?php echo $this->basePath(
-                        'assets/img/zf2-logo.png'
-                    ) ?>"
-                    alt="Zend Framework 2"/>&nbsp; Zend
-                Framework <?php echo $this->translate(
-                    'Skeleton Application'
-                ) ?></a></h3>
+        <h3>
+            <a href="<?php echo $this->url('home') ?>">
+                <img src="<?php echo $this->basePath(
+                    'assets/img/zf2-logo.png'
+                ) ?>"
+                     alt="Zend Framework 2"/>&nbsp; Zend Framework
+                <?php echo $this->translate('Skeleton Application') ?>
+            </a>
+        </h3>
     </div>
     <div class="large-3 columns">
         <ul class="right button-group">
             <li><a href="<?php echo $this->url('home') ?>"
-                   class="button round"><?php echo $this->translate(
-                        'Home'
-                    ) ?></a>
+                   class="button round"><?php echo $this->translate('Home') ?>
+                </a>
             </li>
         </ul>
     </div>
 </div>
+
 <?php echo $this->content; ?>
 
 <footer class="row">
@@ -51,25 +60,29 @@
         <div class="row">
             <div class="large-6 columns">
                 <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies
-                    Ltd. <?php echo $this->translate(
-                        'All rights reserved.'
-                    ) ?></p>
+                    Ltd. <?php echo $this->translate('All rights reserved.') ?>
+                </p>
             </div>
             <div class="large-6 columns">
                 <ul class="inline-list right">
-                    <li><a href="#">Zend</a></li>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">IRC</a></li>
+                    <li><a href="http://www.zend.com/" target="_blank">Zend</a></li>
+                    <li><a href="https://github.com/zendframework" target="_blank">GitHub</a></li>
+                    <li><a href="http://framework.zend.com/irc/" target="_blank">IRC</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
-<script src="assets/js/vendor/jquery.js"></script>
-<script src="assets/ js/foundation.min.js"></script>
+
+<!-- Scripts -->
+<?php
+    $this->inlineScript()
+        ->prependFile($this->basePath('assets/js/foundation.min.js'))
+        ->prependFile($this->basePath('assets/js/vendor/jquery.js'));
+?>
+<?php echo $this->inlineScript() ?>
 <script>
     $(document).foundation();
 </script>
-<?php echo $this->inlineScript() ?>
 </body>
 </html>
