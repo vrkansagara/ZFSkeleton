@@ -46,5 +46,5 @@ install:
 script:
   - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover clover.xml ; fi
   - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit ; fi
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then -v fix . --dry-run --config-file ./.php_cs ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then php-cs-fixer -v fix . --dry-run --config-file ./.php_cs ; fi
   - cd test ; ../vendor/bin/phpunit -c phpunit.xml
