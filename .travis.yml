@@ -14,7 +14,6 @@ matrix:
         - EXECUTE_CS_CHECK=true
 
     - php: 7
-
     - php: hhvm
 
   allow_failures:
@@ -34,14 +33,14 @@ before_install:
   # see: https://github.com/drush-ops/drush#install---composer
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
-    - composer self-update
-    - composer info -i
+  - composer self-update
+  - composer info -i
   - if [[ $EXECUTE_TEST_COVERALLS == 'true' ]]; then composer require --dev --no-update satooshi/php-coveralls ; fi
 
 install:
- - travis_retry composer install --no-interaction --ignore-platform-reqs
- - composer self-update
- - composer update
+  - travis_retry composer install --no-interaction --ignore-platform-reqs
+  - composer self-update
+  - composer update
 
 
 script:
