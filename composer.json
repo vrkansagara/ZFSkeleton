@@ -1,12 +1,15 @@
 {
   "name": "vrkansagara/zfskeleton",
-  "description": "Skeleton Application for ZF2",
+  "description": "Zend Framework Skeleton Application for every project.",
   "minimum-stability": "stable",
   "license": "BSD-3-Clause",
   "keywords": [
-    "framework",
-    "zf2",
-    "php"
+    "Application",
+    "Skeleton",
+    "Framework",
+    "Zend",
+    "ZF2",
+    "PHP"
   ],
   "homepage": "https://github.com/vrkansagara/ZFSkeleton",
   "authors": [
