@@ -104,12 +104,12 @@ into `http` block if it does not already exist:
     }
 
 
-Create a virtual host configuration file for your project under `/path/to/nginx/sites-enabled/zf2-app.localhost.conf`
+Create a virtual host configuration file for your project under `/path/to/nginx/sites-enabled/ZFSkeleton.localhost.conf`
 it should look something like below:
 
     server {
         listen       80;
-        server_name  zf2-app.localhost;
+        server_name  ZFSkeleton.localhost;
         root         /path/to/ZFSkeleton/public;
 
         location / {
